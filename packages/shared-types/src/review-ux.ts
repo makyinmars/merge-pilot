@@ -62,9 +62,10 @@ export type DiffHunkLine = z.infer<typeof DiffHunkLineSchema>;
 export const DiffHunkSchema = z.object({
   index: z.number().int().min(0),
   header: z.string().min(1),
-  oldStart: z.number().int().positive(),
+  // Git uses start=0 for empty sides in add/delete hunks (for example @@ -0,0 +12,4 @@).
+  oldStart: z.number().int().min(0),
   oldLines: z.number().int().min(0),
-  newStart: z.number().int().positive(),
+  newStart: z.number().int().min(0),
   newLines: z.number().int().min(0),
   lines: z.array(DiffHunkLineSchema)
 });

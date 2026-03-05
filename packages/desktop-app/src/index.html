@@ -1,0 +1,102 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>MergePilot Review Slice</title>
+    <link rel="stylesheet" href="./renderer.css" />
+  </head>
+  <body>
+    <div class="background-grid" aria-hidden="true"></div>
+    <main class="app-shell">
+      <header class="app-header">
+        <div class="brand-block">
+          <p class="brand-eyebrow">Desktop Review Slice</p>
+          <h1>MergePilot</h1>
+          <p class="brand-subtitle">Unified and split diff workflows with local Git as source of truth.</p>
+        </div>
+
+        <form id="session-form" class="session-form">
+          <label>
+            <span>Repository</span>
+            <input id="repository-path-input" type="text" autocomplete="off" required />
+          </label>
+
+          <label>
+            <span>Base Ref</span>
+            <input id="base-ref-input" type="text" value="HEAD" autocomplete="off" required />
+          </label>
+
+          <label>
+            <span>Head Ref</span>
+            <input id="head-ref-input" type="text" value="WORKING_TREE" autocomplete="off" required />
+          </label>
+
+          <label>
+            <span>Context</span>
+            <input id="context-lines-input" type="number" value="3" min="0" max="20" required />
+          </label>
+
+          <button id="load-session-button" type="submit">Load Review</button>
+        </form>
+      </header>
+
+      <section class="summary-strip" id="summary-strip">
+        <article>
+          <h2>Compared</h2>
+          <p id="summary-compared">No session loaded</p>
+        </article>
+        <article>
+          <h2>Files</h2>
+          <p id="summary-files">0</p>
+        </article>
+        <article>
+          <h2>Additions</h2>
+          <p id="summary-additions">0</p>
+        </article>
+        <article>
+          <h2>Deletions</h2>
+          <p id="summary-deletions">0</p>
+        </article>
+      </section>
+
+      <section class="workspace">
+        <aside class="file-sidebar" aria-label="Changed files">
+          <div class="sidebar-title-row">
+            <h2>Changed Files</h2>
+            <p id="status-pill" class="status-pill">Idle</p>
+          </div>
+          <div id="file-list" class="file-list"></div>
+        </aside>
+
+        <section class="viewer-panel" aria-live="polite">
+          <div class="viewer-toolbar">
+            <div class="mode-toggle" role="tablist" aria-label="Diff mode">
+              <button id="mode-split-button" class="mode-button is-active" data-mode="split" type="button">
+                Side-by-Side
+              </button>
+              <button id="mode-unified-button" class="mode-button" data-mode="unified" type="button">
+                Unified
+              </button>
+            </div>
+
+            <div class="hunk-controls">
+              <button id="previous-hunk-button" type="button">Previous Hunk</button>
+              <button id="next-hunk-button" type="button">Next Hunk</button>
+            </div>
+          </div>
+
+          <div id="hunk-anchor-strip" class="hunk-anchor-strip"></div>
+
+          <div id="diff-scroll-container" class="diff-scroll-container">
+            <div id="diff-padding-top"></div>
+            <div id="diff-rows"></div>
+            <div id="diff-padding-bottom"></div>
+          </div>
+        </section>
+      </section>
+    </main>
+
+    <script type="module" src="./renderer.js"></script>
+  </body>
+</html>

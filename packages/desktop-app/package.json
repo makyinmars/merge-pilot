@@ -1,0 +1,18 @@
+{
+  "name": "@mergepilot/desktop-app",
+  "version": "0.1.0",
+  "private": true,
+  "type": "module",
+  "main": "./dist/main.js",
+  "scripts": {
+    "build": "bun build src/main.ts --outfile dist/main.js --target=node --external electron && bun build src/preload.ts --outfile dist/preload.js --target=node --external electron && bun build src/renderer.ts --outfile dist/renderer.js --target=browser && cp src/index.html dist/index.html && cp src/renderer.css dist/renderer.css",
+    "start": "bun run build && electron dist/main.js",
+    "dev": "bun run start"
+  },
+  "dependencies": {
+    "@mergepilot/git-adapter": "workspace:*",
+    "@mergepilot/review-ux": "workspace:*",
+    "@mergepilot/shared-types": "workspace:*",
+    "zod": "catalog:"
+  }
+}

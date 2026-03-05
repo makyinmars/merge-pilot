@@ -27,6 +27,7 @@ All API entrypoints validate request and response payloads with Zod contracts fr
 
 ## Behavior Notes
 - Parses git unified patch text into hunk and line-level models.
+- Accepts Git add/delete hunk headers with zero-side start lines (for example `@@ -0,0 +N,M @@`).
 - Produces row-based models ready for renderer virtualization.
 - Supports split-view alignment of deletion/addition blocks.
 - Emits hunk anchors for keyboard and panel navigation.

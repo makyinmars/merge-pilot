@@ -14,10 +14,14 @@
     "zod": "^4.3.6"
   },
   "scripts": {
-    "typecheck": "tsc -p tsconfig.typecheck.json --noEmit"
+    "typecheck": "tsc -p tsconfig.typecheck.json --noEmit",
+    "desktop:build": "bun run --cwd packages/desktop-app build",
+    "desktop:start": "bun run --cwd packages/desktop-app start",
+    "desktop:dev": "bun run --cwd packages/desktop-app dev"
   },
   "devDependencies": {
     "@types/node": "^24.10.0",
+    "electron": "^40.7.0",
     "typescript": "^5.9.3"
   }
 }

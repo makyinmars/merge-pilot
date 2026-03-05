@@ -732,9 +732,9 @@ function parsePatch(patch: string | undefined, language: ReviewCodeLanguage): Pa
         !Number.isInteger(oldLines) ||
         !Number.isInteger(newStart) ||
         !Number.isInteger(newLines) ||
-        oldStart <= 0 ||
+        oldStart < 0 ||
         oldLines < 0 ||
-        newStart <= 0 ||
+        newStart < 0 ||
         newLines < 0
       ) {
         throw new ReviewUxError(

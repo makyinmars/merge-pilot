@@ -46,6 +46,9 @@
       ],
       "@mergepilot/git-adapter": [
         "packages/git-adapter/src/index.ts"
+      ],
+      "electron": [
+        "packages/desktop-app/src/electron-shim.d.ts"
       ]
     }
   }
