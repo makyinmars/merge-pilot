@@ -1,6 +1,6 @@
 # MergePilot
 
-Phase 2 (`Foundation`) baseline completed for MergePilot.
+Phase 2 (`Foundation`) baseline completed. Phase 3 (`Review UX`) is now in progress.
 
 ## Toolchain Baseline
 - Bun: `1.3.9` (`packageManager`)
@@ -26,9 +26,13 @@ Phase 2 (`Foundation`) baseline completed for MergePilot.
 - `@mergepilot/git-adapter`: local read-only Git adapter for repo open, ref resolution, and diff generation.
 - `@mergepilot/ai-orchestrator`: Codex execution contract, timeout policy, and cancellation handling.
 - `@mergepilot/diff-providers`: provider abstraction and `diffs.com` Phase 1 export/deep-link baseline.
+- `@mergepilot/review-ux`: diff viewer model generation for unified/split layouts, hunk navigation anchors, syntax tokenization, and virtualization math.
 
 ## Foundation Artifacts
 - `docs/foundation/git-adapter-read-only-baseline.md`
+
+## Review UX Artifacts
+- `docs/review-ux/diff-viewer-baseline.md`
 
 ## Scripts
 - `bun run typecheck`
