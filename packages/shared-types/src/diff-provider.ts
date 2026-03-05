@@ -26,7 +26,7 @@ export const ReviewSessionExportSchema = z.object({
   repositoryPath: z.string().min(1),
   baseRef: z.string().min(1),
   headRef: z.string().min(1),
-  createdAt: z.string().datetime({ offset: true }),
+  createdAt: z.iso.datetime({ offset: true }),
   files: z.array(DiffFileExportSchema).min(1),
   includePaths: z.array(z.string().min(1)).optional(),
   excludePaths: z.array(z.string().min(1)).optional()
@@ -35,7 +35,7 @@ export type ReviewSessionExport = z.infer<typeof ReviewSessionExportSchema>;
 
 export const DiffProviderExportPayloadSchema = z.object({
   provider: z.string().min(1),
-  exportedAt: z.string().datetime({ offset: true }),
+  exportedAt: z.iso.datetime({ offset: true }),
   session: ReviewSessionExportSchema,
   metadata: z
     .object({
@@ -49,9 +49,9 @@ export type DiffProviderExportPayload = z.infer<typeof DiffProviderExportPayload
 export const ExternalReviewStatusSchema = z.object({
   provider: z.string().min(1),
   state: z.enum(["not-supported", "pending", "ready", "failed"]),
-  url: z.string().url().optional(),
+  url: z.url().optional(),
   externalId: z.string().optional(),
-  checkedAt: z.string().datetime({ offset: true }),
+  checkedAt: z.iso.datetime({ offset: true }),
   reason: z.string().optional()
 });
 export type ExternalReviewStatus = z.infer<typeof ExternalReviewStatusSchema>;

@@ -12,7 +12,8 @@ Build MergePilot as a desktop-first Electron code review app with fast local dif
 ## Current Delivery State
 
 - Discovery phase: complete.
-- Next phase: Foundation (`Build local git adapter read-only baseline`).
+- Foundation phase: complete (`Build local git adapter read-only baseline`).
+- Next phase: Review UX (`Implement side-by-side and unified diff viewer`).
 
 ## Architecture Guardrails
 

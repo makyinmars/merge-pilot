@@ -43,7 +43,7 @@ export const CodexReviewRequestSchema = z.object({
   metadata: z
     .object({
       requestedBy: z.string().min(1),
-      requestedAt: z.string().datetime({ offset: true }),
+      requestedAt: z.iso.datetime({ offset: true }),
       deterministic: z.boolean().default(true)
     })
     .optional()
@@ -81,7 +81,7 @@ export const CodexReviewResponseSchema = z.object({
   provenance: z.object({
     model: z.string().min(1),
     promptHash: z.string().min(1),
-    generatedAt: z.string().datetime({ offset: true })
+    generatedAt: z.iso.datetime({ offset: true })
   })
 });
 export type CodexReviewResponse = z.infer<typeof CodexReviewResponseSchema>;

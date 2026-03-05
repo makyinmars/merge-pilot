@@ -40,6 +40,9 @@
       ],
       "@mergepilot/diff-providers": [
         "packages/diff-providers/src/index.ts"
+      ],
+      "@mergepilot/git-adapter": [
+        "packages/git-adapter/src/index.ts"
       ]
     }
   }

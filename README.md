@@ -1,6 +1,6 @@
 # MergePilot
 
-Phase 1 (`Discovery`) bootstrap for MergePilot.
+Phase 2 (`Foundation`) baseline completed for MergePilot.
 
 ## Toolchain Baseline
 - Bun: `1.3.9` (`packageManager`)
@@ -23,8 +23,12 @@ Phase 1 (`Discovery`) bootstrap for MergePilot.
 
 ## Workspace Packages
 - `@mergepilot/shared-types`: cross-package schemas and domain contracts.
+- `@mergepilot/git-adapter`: local read-only Git adapter for repo open, ref resolution, and diff generation.
 - `@mergepilot/ai-orchestrator`: Codex execution contract, timeout policy, and cancellation handling.
 - `@mergepilot/diff-providers`: provider abstraction and `diffs.com` Phase 1 export/deep-link baseline.
+
+## Foundation Artifacts
+- `docs/foundation/git-adapter-read-only-baseline.md`
 
 ## Scripts
 - `bun run typecheck`
