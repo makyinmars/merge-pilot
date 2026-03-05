@@ -26,6 +26,7 @@ Build MergePilot as a desktop-first Electron code review app with fast local dif
 - Bun baseline: `1.3.9`.
 - Node baseline: `24.x` (types aligned via `@types/node@^24.10.0`).
 - TypeScript baseline: `5.9.x`.
+- Zod baseline: `^4.3.6` for schema validation contracts (centralized via Bun `catalog`, consumed as `catalog:` in workspace packages).
 - Keep TypeScript in strict-plus mode using:
   - `strict`
   - `noUncheckedIndexedAccess`

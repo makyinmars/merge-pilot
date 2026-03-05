@@ -6,6 +6,7 @@ Phase 1 (`Discovery`) bootstrap for MergePilot.
 - Bun: `1.3.9` (`packageManager`)
 - Node types: `@types/node@^24.10.0`
 - TypeScript: `^5.9.3`
+- Zod: `^4.3.6` (centralized via Bun `catalog` in root `package.json`)
 - TS policy: `strict` + strictness extensions in `tsconfig.base.json`
 
 ## Source Of Truth Workflow (Obsidian-First)
